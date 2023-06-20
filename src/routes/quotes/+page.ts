@@ -1,4 +1,4 @@
-import { error } from "@sveltejs/kit";
+import { error, redirect } from "@sveltejs/kit";
 
 import type { Quote } from "types/quote";
 
@@ -19,9 +19,5 @@ export async function load({ url, fetch }) {
   if (status !== 200)
     throw error(status, response.error);
 
-  return {
-    props: {
-      slug: response.slug,
-    }
-  }
+  throw redirect(302, `/quotes/${response.slug}`)
 }

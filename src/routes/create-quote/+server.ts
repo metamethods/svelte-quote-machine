@@ -11,13 +11,13 @@ export async function POST({ request }: { request: Request }) {
   const authorLength = Buffer.byteLength(author.replace(/\s/g, ""), "utf8");
 
   // 1kib quote limit. 10b minimum
-  // 500b author limit. 10b minimum
+  // 100b author limit. 3b minimum
   // Helps prevent anyone creating huge quotes that takes up too much space
   if (quoteLength > 1024 || quoteLength < 10)
     return json({ error: "Quote length doesn't meet requirements. Has to be under 1kib, and more than 10 bytes. The field cannot be empty too." }, { status: 400 });
   
-  if (authorLength > 500 || authorLength < 10)
-    return json({ error: "Author length doesn't meet requirements. Has to be under 500 bytes, and more than 10 bytes. The field cannot be empty too." }, { status: 400 });
+  if (authorLength > 100 || authorLength < 3)
+    return json({ error: "Author length doesn't meet requirements. Has to be under 100 bytes, and more than 3 bytes. The field cannot be empty too." }, { status: 400 });
 
   const id = crypto.randomBytes(16).toString("hex");
 

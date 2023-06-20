@@ -1,0 +1,97 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --foreground: #141414;
+    --topground: #181818;
+
+    --border: #31353a;
+
+    --text-color: #f5f5f5;
+    --text-color-opposite: #181a1d;
+    --text-link: #4550ec;
+
+    /* Buttons */
+    --button-primary: #4550ec;
+    --button-secondary: #cccccc;
+    --button-tertiary: #cccccc;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #f5f5f5;
+    --foreground: #e2e2e2;
+    --topground: #c4c4c4;
+
+    --border: #cccccc;
+
+    --text-color: #181a1d;
+    --text-color-opposite: #f5f5f5;  
+    --text-link: #4550ec;
+
+    --text-color: #121212;
+
+    /* Buttons */
+    --button-primary: #939bff;
+    --button-secondary: #707070;
+    --button-tertiary: #707070;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-color);
+
+  margin: 0;
+}
+
+/* Make inter the default font */
+h1, h2, h3, h4, h5, h6,
+p, span, a, li,
+button, input, label, select, option, textarea {
+  font-family: 'Inter', sans-serif; 
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-link);
+}
+
+.button {
+  border: none;
+  border-radius: 0.25rem;
+
+  padding: 0.5rem 1rem;
+
+  cursor: pointer;
+}
+
+.button.primary {
+  background-color: var(--button-primary);
+  color: var(--text-color);
+}
+
+.button.secondary {
+  background-color: var(--button-secondary);
+  color: var(--text-color-opposite);
+}
+
+.button.tertiary {
+  background-color: var(--button-tertiary);
+  color: var(--button-primary);
+}
+
+.button.ghost {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--button-secondary);
+}
+
+.button.error {
+  background-color: #d13c3c;
+  color: var(--text-color);
+}

@@ -15,6 +15,7 @@
   <!-- Embed -->
   <meta property="og:title" content="{quote.author}" />
   <meta property="og:description" content="“{quote.quote}”" />
+  <meta property="og:url" content="/quotes/{quote.slug}" />
   <!-- TODO: Make working og:image -->
   <!-- <meta property="og:image" content="https://quotes.alemayhu.com/api/og?quote={quote.quote}&author={quote.author}" /> -->
 {:else if data}
